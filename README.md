@@ -38,7 +38,7 @@ Leitet Instagram-Profile automatisch zu Picuki um, einem alternativen Viewer ohn
    - [Tampermonkey](https://www.tampermonkey.net/)
    - [Greasemonkey](https://www.greasespot.net/) (Firefox)
 
-2. Klicke auf [paywall_redirector_instagram_picuki.user.js](paywall_redirector_instagram_picuki.user.js) und installiere das Script
+2. Klicke auf [paywall_redirector_instagram_picuki.user.js (RAW)](https://raw.githubusercontent.com/planetmija/violentmonkey/main/paywall_redirector_instagram_picuki.user.js) und installiere das Script
 
 3. Das Script wird automatisch auf den unterstützten Websites aktiv
 
