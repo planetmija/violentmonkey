@@ -1,26 +1,32 @@
 // ==UserScript==
-// @name         Paywall Redirector & Instagram Picuki
-// @namespace    http://violentmonkey.net/
-// @version      2026.1.1
-// @description  Leitet Paywall-Artikel zu archive.is und Instagram-Profile zu Picuki um
+
+// ==UserScript==
+// @name         Paywall Redirector
+// @namespace    https://github.com/planetmija/violentmonkey
+// @version      2026.2
+// @description  Leitet Paywall-Artikel deutscher Nachrichtenseiten automatisch zu archive.is um
 // @author       Copilot
 // @match        https://www.spiegel.de/*
 // @match        https://www.badische-zeitung.de/*
-// @match        https://www.instagram.com/*
 // @match        https://www.sueddeutsche.de/*
 // @match        https://www.heise.de/*
 // @match        https://www.golem.de/*
 // @match        https://www.zeit.de/*
 // @grant        none
+// @updateURL    https://raw.githubusercontent.com/planetmija/violentmonkey/main/paywall_redirector.user.js
+// @downloadURL  https://raw.githubusercontent.com/planetmija/violentmonkey/main/paywall_redirector.user.js
+// @homepageURL  https://github.com/planetmija/violentmonkey
+// @source       https://github.com/planetmija/violentmonkey/blob/main/paywall_redirector.user.js
+// @supportURL   https://github.com/planetmija/violentmonkey/issues
 // @run-at       document-start
 // ==/UserScript==
 
 /**
- * Paywall Redirector & Instagram Picuki
- * 
+ * Paywall Redirector
+ *
  * Automatische Weiterleitung von Paywall-Artikeln deutscher Nachrichtenseiten
- * zu Archive.is sowie Umleitung von Instagram-Profilen zu Picuki.
- * 
+ * zu Archive.is.
+ *
  * Features:
  * - Intelligente Paywall-Erkennung via DOM-Selektoren und Textmuster
  * - Sichtbarkeitscheck: Nur aktive Paywalls werden erkannt
@@ -162,15 +168,6 @@
         }
     }
 
-    // Instagram: Profilseiten zu Picuki umleiten (ohne Login)
-    if (originalUrl.match(/^https:\/\/www\.instagram\.com\/[A-Za-z0-9_.]+\/?$/)) {
-        const match = originalUrl.match(/^https:\/\/www\.instagram\.com\/([A-Za-z0-9_.]+)\/?$/);
-        if (match && match[1]) {
-            const picukiUrl = `https://picuki.site/?profile=${match[1]}`;
-            window.location.replace(picukiUrl);
-            return;
-        }
-    }
 
     // Starte Paywall-Checks nach DOM-Laden
     if (document.readyState === 'loading') {
